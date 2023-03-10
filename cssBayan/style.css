@@ -8,22 +8,31 @@ body {
 
 .main-heading {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
+}
+
+.meme-text {
+  font-size: 2rem;
 }
 
 .container {
   margin: 20px auto;
-  max-width: 40%;
+  max-width: 60%;
 }
 
 .item-title {
   display: block;
   font-size: 1.5rem;
-  cursor: pointer;
 }
 
-.item-title:hover {
-  color: blue;
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus-sign {
+  visibility: hidden;
 }
 
 .item-checkbox {
@@ -42,16 +51,76 @@ body {
   display: block;
 }
 
-.item-title:hover ~ .item-body {
-  display: block;
-}
-
-.item:hover > .item-body {
-  display: block;
-}
-
 .item-body img {
   display: block;
   margin: 0 auto;
   padding-top: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+  .item-title {
+    cursor: auto;
+  }
+
+  .main-heading {
+    font-size: 1.5rem;
+  }
+
+  .meme-text {
+    font-size: 1rem;
+  }
+
+  .container {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+  .meme-img {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1199px) {
+  .item-title {
+    cursor: auto;
+  }
+
+  .main-heading {
+    font-size: 2.5rem;
+  }
+
+  .meme-text {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    margin: 15px auto;
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container:hover {
+    color: blue;
+  }
+
+  .item-title:hover ~ .item-body {
+    display: block;
+  }
+
+  .container:hover .plus-sign {
+    visibility: visible;
+  }
+
+  .item:hover .plus-sign {
+    visibility: visible;
+    rotate: 45deg;
+  }
+
+  .item:hover > .item-body {
+    display: block;
+  }
+
+  .item-title {
+    cursor: pointer;
+  }
 }
