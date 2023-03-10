@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(245, 242, 236);
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 40%;
+}
+
+.item-title {
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.item-title:hover {
+  color: blue;
+}
+
+.item-checkbox {
+  /* appearance: none;
+  width: 0;
+  height: 0; */
+  display: none;
+}
+
+.item-body {
+  opacity: 1;
+  display: none;
+}
+
+.item-checkbox:checked + .item-body {
+  display: block;
+}
+
+.item-title:hover ~ .item-body {
+  display: block;
+}
+
+.item:hover > .item-body {
+  display: block;
+}
+
+.item-body img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+}
