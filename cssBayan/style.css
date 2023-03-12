@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(245, 242, 236);
+  font-weight: bold;
+  margin: 0;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.meme-text {
+  font-size: 2rem;
+}
+
+.container {
+  margin: 1.25rem auto;
+  max-width: 60%;
+}
+
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus-sign {
+  visibility: hidden;
+}
+
+.item-checkbox {
+  display: none;
+}
+
+.item-body {
+  height: 0;
+  transform: scale(0);
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.item-checkbox:checked ~ .item-body {
+  height: auto;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.item-body img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 0.725rem;
+}
+
+.item-title {
+  cursor: pointer;
+}
+
+/* Media */
+
+@media (min-width: 320px) and (max-width: 819px) {
+  .main-heading {
+    font-size: 1.5rem;
+  }
+
+  .meme-text {
+    font-size: 1rem;
+  }
+
+  .container {
+    margin: 0.625rem auto;
+    max-width: 90%;
+  }
+  .meme-img {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 600px) {
+  .item-checkbox:checked ~ .item-body {
+    height: 32em;
+  }
+
+  .item:not(:checked) > .item-body {
+    transition: all 0.6s;
+  }
+
+  .item-checkbox:checked ~ .item-title > img {
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1199px) {
+  .main-heading {
+    font-size: 2.5rem;
+  }
+
+  .meme-text {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    margin: 1rem auto;
+    max-width: 75%;
+  }
+}
+
+@media (hover: hover) {
+  .container:hover {
+    color: green;
+    transition: color 1s;
+  }
+
+  .container:hover .plus-sign {
+    visibility: visible;
+  }
+
+  .item:hover .plus-sign {
+    visibility: visible;
+    transition: transform 0.5s;
+    transform: rotate(45deg);
+  }
+
+  .item:not(:hover) .plus-sign {
+    transition: transform 0.5s;
+  }
+
+  .item:hover > .item-body {
+    height: 32em;
+    overflow: visible;
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+
+  .item:not(:hover) {
+    color: #000;
+    transition: all 0.5s;
+  }
+
+  .item:not(:hover) > .item-body {
+    transition: all 0.5s;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  .item:hover > .item-body {
+    height: 100%;
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+}
